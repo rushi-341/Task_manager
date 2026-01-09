@@ -153,12 +153,6 @@ Authorization: Bearer <JWT_TOKEN>
 
 ---
 
-## 🧑‍💻 Author
-
-**Narasimha**  
-GitHub: https://github.com/narasimha-146
-
----
 
 ## 📌 Note
 
