@@ -1,237 +1,149 @@
-🗂️ Task Manager – Full Stack Application
+# 🎨 Task Manager Frontend (React)
 
-A modern, full-stack Task Management application with secure authentication, task tracking, notifications, and a clean UI.
-The project is built with React (Vite) on the frontend and Node.js + Express + MongoDB on the backend, using JWT-based authentication.
+A **modern and responsive frontend** for the Task Manager application built using **React (Vite)**.  
+This application connects to a separate backend REST API to handle authentication and task management.
 
-📌 Project Overview
+---
 
-This repository contains both frontend and backend code:
+## 🚀 Features
 
-Frontend: React application for user interaction
+- User authentication (Login & Register)
+- JWT-based protected routes
+- Task listing with sorting & filtering
+- Create, update, delete, and complete tasks
+- Notifications for upcoming & overdue tasks
+- Clean UI with responsive design
+- API integration using Fetch
+- Environment-based configuration
 
-Backend: RESTful API handling authentication, tasks, and notifications
+---
 
-The frontend communicates with the backend via secured REST APIs.
+## 🛠️ Tech Stack
 
-🚀 Features
-✅ Core Features
+- **React.js**
+- **Vite**
+- **JavaScript (ES6+)**
+- **React Router DOM**
+- **CSS (Custom styling)**
+- **Fetch API**
 
-User Registration & Login
+---
 
-JWT-based Authentication
+## 📁 Project Structure
 
-Protected Routes
-
-Task CRUD Operations
-
-Task Status Management (Pending / Completed / Overdue)
-
-Sorting & Filtering
-
-Notifications for upcoming & overdue tasks
-
-Responsive and clean UI
-
-🛠️ Tech Stack
-Frontend
-
-React.js (Vite)
-
-JavaScript (ES6+)
-
-React Router DOM
-
-CSS (Custom Styling)
-
-Fetch API
-
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB + Mongoose
-
-JWT (JSON Web Tokens)
-
-bcryptjs
-
-dotenv
-
-CORS
-
-📁 Project Structure
-Task_manager/
-├── Task_Manger_frontend/
-│   ├── public/
-│   │   └── illustration.png
-│   │
-│   ├── src/
-│   │   ├── api.js
-│   │   ├── components/
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── ProtectedRoute.jsx
-│   │   │   └── TaskTable.jsx
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── Login.jsx
-│   │   │   ├── Register.jsx
-│   │   │   ├── Home.jsx
-│   │   │   ├── Tasks.jsx
-│   │   │   ├── Completed.jsx
-│   │   │   └── Notification.jsx
-│   │   │
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   │
-│   ├── .env
-│   ├── package.json
-│   └── README.md
+```
+frontend/
+├── public/
+│   └── illustration.png       # Static images
 │
-├── Task_Manger_backend/
-│   ├── config/
-│   │   └── db.js
+├── src/
+│   ├── api.js                 # Centralized API calls
 │   │
-│   ├── controllers/
-│   │   ├── userController.js
-│   │   └── taskController.js
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── ProtectedRoute.jsx
+│   │   └── TaskTable.jsx
 │   │
-│   ├── middleware/
-│   │   ├── auth.js
-│   │   ├── notFound.js
-│   │   └── errorHandler.js
+│   ├── pages/
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   ├── Home.jsx
+│   │   ├── Tasks.jsx
+│   │   ├── Completed.jsx
+│   │   └── Notification.jsx
 │   │
-│   ├── models/
-│   │   ├── user.js
-│   │   └── tasks.js
-│   │
-│   ├── routes/
-│   │   ├── userRoutes.js
-│   │   └── taskRoutes.js
-│   │
-│   ├── utils/
-│   │   └── logger.js
-│   │
-│   ├── .env
-│   ├── server.js
-│   ├── package.json
-│   └── README.md
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
 │
+├── .env                       # Environment variables
+├── package.json
 └── README.md
+```
 
-⚙️ Environment Variables
-Frontend (Task_Manger_frontend/.env)
-VITE_API_URL=http://localhost:5000/api
+---
 
-Backend (Task_Manger_backend/.env)
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+## ⚙️ Environment Variables
 
-▶️ Getting Started
-1️⃣ Clone the Repository
-git clone https://github.com/rushi-341/Task_manager.git
-cd Task_manager
+Create a `.env` file in the root of the frontend project:
 
-2️⃣ Backend Setup
-cd Task_Manger_backend
+```env
+VITE_API_URL=http://localhost:5000/api/tasks
+```
+
+Update this URL after deploying the backend.
+
+---
+
+## ▶️ Getting Started
+
+### 1️⃣ Clone the repository
+```bash
+git clone <frontend-repo-url>
+cd <frontend-project>
+```
+
+### 2️⃣ Install dependencies
+```bash
 npm install
+```
+
+### 3️⃣ Start the development server
+```bash
 npm run dev
+```
 
-
-Backend runs at:
-
-http://localhost:5000
-
-3️⃣ Frontend Setup
-cd ../Task_Manger_frontend
-npm install
-npm run dev
-
-
-Frontend runs at:
-
+The app will run at:
+```
 http://localhost:5173
+```
 
-🔐 Authentication Flow
+---
 
-User registers or logs in
+## 🔐 Authentication Flow
 
-Backend returns a JWT token
+1. User registers or logs in
+2. Backend returns a JWT token
+3. Token is stored in `localStorage`
+4. Protected routes require authentication
+5. Token is sent in the `Authorization` header
 
-Token is stored in localStorage
-
-Protected routes require authentication
-
-Token is sent via headers:
-
+```
 Authorization: Bearer <JWT_TOKEN>
+```
 
-📌 API Endpoints
-Authentication
+---
 
-POST /api/users/register
+## 🧪 Pages Overview
 
-POST /api/users/login
+| Page | Description |
+|----|------------|
+| /login | User login |
+| /register | User registration |
+| / | Protected tasks dashboard |
 
-Tasks (Protected)
+---
 
-GET /api/tasks
+## 🎨 UI Highlights
 
-GET /api/tasks/:id
+- Split layout authentication pages with illustrations
+- Responsive task table
+- Sorting options (date, title, priority, status)
+- Loading & empty states
+- Clean, minimal styling
 
-POST /api/tasks
+---
 
-PUT /api/tasks/:id
+## 🔒 Security Notes
 
-DELETE /api/tasks/:id
+- JWT stored in localStorage
+- Protected routes using React Router
+- CORS handled at backend
 
-PATCH /api/tasks/:id/done
+---
 
-GET /api/notifications
 
-🧪 Sample Task Payload
-{
-  "title": "Finish backend APIs",
-  "priority": "High",
-  "status": "Pending",
-  "dueDate": "2025-01-25"
-}
+## 📌 Note
 
-🎨 UI Highlights
-
-Clean authentication pages with illustrations
-
-Responsive task table
-
-Sorting by date, priority, and status
-
-Loading and empty states
-
-Minimal and modern design
-
-🔒 Security
-
-Password hashing with bcrypt
-
-JWT-based authentication
-
-Environment variables for secrets
-
-CORS configured at backend
-
-🧑‍💻 Author
-
-Rushi Yalamanchili
-Full Stack Developer
-GitHub: https://github.com/rushi-341
-
-📌 Notes
-
-Frontend and Backend can be deployed independently
-
-Designed for scalability and clean architecture
-
-Suitable for academic projects and placement portfolios
+This repository contains **only frontend code**.  
+Backend APIs are maintained in a separate repository.
