@@ -1,0 +1,16 @@
+/* GLOBAL THEME COLORS */
+:root {
+  --primary: #1a73e8;
+  --text-dark: #1f1f1f;
+  --text-light: #6b6b6b;
+  --border-color: #dcdcdc;
+  --bg-light: #f7f9fc;
+}
+
+/* Center all pages */
+.page-wrapper {
+  max-width: 900px;
+  margin-top: 40px;
+  margin: auto;
+  
+}
